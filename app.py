@@ -9,7 +9,7 @@ from app_korea import run_korea_app
 
 def main() :
 
-    st.title('인천 음식점 카테고리 대시보드')
+    st.title('인천 음식점 카테고리 대시보드!')
 
     menu = ["Home", "Korea" , "China" , "Japan"]
     choice = st.sidebar.selectbox("메뉴 선택", menu)
