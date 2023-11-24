@@ -1,3 +1,4 @@
+from tkinter import OptionMenu
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -12,6 +13,9 @@ def main() :
     st.title('인천 음식점 카테고리 대시보드!')
 
     menu = ["Home", "Korea" , "China" , "Japan"]
+    # icons = ['shop','shop','shop']
+    # menu_icon="app-indicator"
+
     choice = st.sidebar.selectbox("메뉴 선택", menu)
 
     if choice == menu[1] :

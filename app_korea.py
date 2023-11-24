@@ -9,7 +9,7 @@ def run_korea_app () :
     st.subheader('Korea')
     
     df = pd.read_csv('./data/sosangin.csv')
-
+    
     df = df[['상호명','상권업종대분류명','상권업종중분류명','상권업종소분류명','지번주소','건물명']]
     df.isna().sum()
     df = df.fillna('') # NaN 값을 '' 로 대체
@@ -22,11 +22,11 @@ def run_korea_app () :
 
 # 굳이 안넣어도 되려나
 
-        # 한식
-    # if st.checkbox('한식 데이터 프레임 보기') :
-    #         st.dataframe( df_korea )
-    # else :
-    #         st.text('')
+      #  한식
+    if st.checkbox('한식 데이터 프레임 보기') :
+            st.dataframe( df_korea )
+    else :
+            st.text('')
 
     choice = st.selectbox('한식 카테고리 선택',set(df_korea['상권업종소분류명']))
 
@@ -71,3 +71,4 @@ def run_korea_app () :
             st.dataframe(selected_df)
     else :
            st.text('')
+
