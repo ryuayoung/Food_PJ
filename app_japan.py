@@ -19,7 +19,7 @@ def run_japan_app() :
     df_japan = df_japan.drop('index', axis=1)
     
     # 일식
-    if st.checkbox('일식 데이터 프레임 보기') :
+    if st.checkbox('인천 일식당 전체 보기') :
             st.dataframe( df_japan )
     else :
             st.text('')

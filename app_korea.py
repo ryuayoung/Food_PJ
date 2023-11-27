@@ -23,7 +23,7 @@ def run_korea_app () :
 # 굳이 안넣어도 되려나
 
       #  한식
-    if st.checkbox('한식 데이터 프레임 보기') :
+    if st.checkbox('인천 한식당 전체 보기') :
             st.dataframe( df_korea )
     else :
             st.text('')

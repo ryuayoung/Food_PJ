@@ -19,7 +19,7 @@ def run_china_app() :
     df_china = df_china.drop('index', axis=1)
 
     # 중식
-    if st.checkbox('중식 데이터 프레임 보기') :
+    if st.checkbox('인천 중식당 전체 보기') :
             st.dataframe( df_china )
     else :
             st.text('')
