@@ -6,7 +6,7 @@ import seaborn as sb
 
 def run_korea_app () :
 
-    st.subheader('Korea')
+    st.subheader('📌Korea')
     
     df = pd.read_csv('./data/sosangin.csv')
     
@@ -28,46 +28,72 @@ def run_korea_app () :
     else :
             st.text('')
 
-    choice = st.selectbox('한식 카테고리 선택',set(df_korea['상권업종소분류명']))
+    choice = st.selectbox('한식 카테고리를 선택하세요. ✔',set(df_korea['상권업종소분류명']))
 
     if choice == '해산물 구이/찜':
             selected_df = df_korea[df_korea['상권업종소분류명'] == '해산물 구이/찜']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1            
             st.dataframe(selected_df)
     elif choice == '소고기 구이/찜' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '소고기 구이/찜']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '닭/오리고기 구이/찜' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '닭/오리고기 구이/찜']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '횟집' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '횟집']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '복 요리 전문' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '복 요리 전문']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '냉면/밀면' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '냉면/밀면']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '전/부침개' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '전/부침개']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '국/탕/찌개류' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '국/탕/찌개류']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '백반/한정식' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '백반/한정식']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '기타 한식 음식점' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '기타 한식 음식점']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '곱창 전골/구이' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '곱창 전골/구이']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '족발/보쌈' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '족발/보쌈']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '돼지고기 구이/찜' :
             selected_df = df_korea[df_korea['상권업종소분류명'] == '돼지고기 구이/찜']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     else :
            st.text('')

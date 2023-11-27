@@ -6,7 +6,7 @@ import seaborn as sb
 
 def run_china_app() :
 
-    st.subheader('China')
+    st.subheader('📌China')
 
     df = pd.read_csv('./data/sosangin.csv')
 
@@ -24,15 +24,19 @@ def run_china_app() :
     else :
             st.text('')
 
-    choice = st.selectbox('중식 카테고리 선택',set(df_china['상권업종소분류명']))
+    choice = st.selectbox('중식 카테고리를 선택하세요. ✔',set(df_china['상권업종소분류명']))
     
     if choice == '중국집':
            # 중국집 선택 시 출력
             selected_df = df_china[df_china['상권업종소분류명'] == '중국집']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '마라탕/훠궈' :
            # 마라탕/훠궈 선택 시 출력
             selected_df = df_china[df_china['상권업종소분류명'] == '마라탕/훠궈']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     else :
            st.text('')

@@ -6,7 +6,7 @@ import seaborn as sb
 
 def run_japan_app() :
 
-    st.subheader('Japan')
+    st.subheader('📌Japan')
 
     df = pd.read_csv('./data/sosangin.csv')
 
@@ -24,19 +24,27 @@ def run_japan_app() :
     else :
             st.text('')
 
-    choice = st.selectbox('일식 카테고리 선택',set(df_japan['상권업종소분류명']))
+    choice = st.selectbox('일식 카테고리를 선택하세요. ✔',set(df_japan['상권업종소분류명']))
 
     if choice == '일식 면 요리':
             selected_df = df_japan[df_japan['상권업종소분류명'] == '일식 면 요리']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '기타 일식 음식점' :
             selected_df = df_japan[df_japan['상권업종소분류명'] == '기타 일식 음식점']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '일식 카레/돈가스/덮밥' :
             selected_df = df_japan[df_japan['상권업종소분류명'] == '일식 카레/돈가스/덮밥']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     elif choice == '일식 회/초밥' :
             selected_df = df_japan[df_japan['상권업종소분류명'] == '일식 회/초밥']
+            selected_df = selected_df.reset_index(drop=True)   
+            selected_df.index += 1
             st.dataframe(selected_df)
     else :
            st.text('')

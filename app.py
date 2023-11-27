@@ -15,10 +15,17 @@ def main() :
     choice = st.sidebar.selectbox("메뉴 선택", menu)
 
     if choice == menu[0] :
-            st.title('인천 음식점 카테고리 대시보드')
-            st.info('소상공인시장진흥공단의 인천지역 상가(상권)정보입니다.( ~2023년9월데이터 )')
-            st.text("인천에 입점된 식당들을 음식 종류에 따라 찾아볼 수 있습니다.😍")
-            st.text("메뉴에서 Korea,China,Japan 을 선택해주세요~!")
+        col1,col2 = st.columns([2,3])
+        with col1 :
+            st.markdown('# Incheon Restaurant 🍽')
+            st.markdown('## ◽ Category List ◽')
+        with col2 :
+            st.subheader('소상공인시장진흥공단의')
+            st.subheader('인천지역 상가정보입니다.')
+            st.text('( 2023년 9월 기준 데이터 )')
+            st.text("인천에 입점된 식당들을 ")
+            st.text('음식 종류에 따라 찾아볼 수 있습니다.😍')
+            st.info("메뉴에서 Korea, China, Japan 을 선택해주세요~!")
             
             if st.checkbox('인천지역의 [ 한식 / 중식 / 일식 ] 점포 통계확인') :
                 st.subheader('Chart')
@@ -49,7 +56,9 @@ def main() :
                         textcoords='offset points')
                 st.pyplot(fig)
 
-                st.info('한식점포 총 15,317개, 중식점포 총 1,594개, 일식점포 총 1,045개 입니다.')
+                st.success('한식점포 총 15,317개')
+                st.info('중식점포 총 1,594개')
+                st.info('일식점포 총 1,045개')
 
                 st.subheader('Pie Chart')  # 파이차트 그리기
 
@@ -62,7 +71,7 @@ def main() :
                 plt.title('Incheon Food By Type Pie Chart')
                 st.pyplot(fig)
 
-                st.success('한식점포 85.3% / 중식점포 8.9% / 일식점포 5.8%')
+                st.warning('한식점포 85.3% / 중식점포 8.9% / 일식점포 5.8%')
         
 
     else :
