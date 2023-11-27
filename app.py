@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 from tkinter import OptionMenu
 import streamlit as st
 import numpy as np
